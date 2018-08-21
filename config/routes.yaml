@@ -2,5 +2,5 @@
 #    path: /
 #    controller: App\Controller\DefaultController::index
 users:
-type: rest
-resource: App\Controller\UsersController
+  type: rest
+  resource: App\Controller\UsersController

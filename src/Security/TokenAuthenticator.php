@@ -15,7 +15,6 @@ class TokenAuthenticator extends AbstractGuardAuthenticator{
     {
         return $request->headers->has('AUTH-TOKEN');
     }
-
     /**
     * Return whatever credentials you want to be passed to getUser() as $credentials.
     */
