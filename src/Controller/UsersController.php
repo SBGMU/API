@@ -41,9 +41,10 @@ class UsersController extends FOSRestController
         return $this->view($user);
     } // "post_users" [POST] /users
 
-    public function putUserAction($id)
+    public function putUserAction(Request $request, int $id)
     {
-
+        //$request->get('firstname');
+        
     } // "put_user" [PUT] /users/{id}
 
     public function deleteUserAction($id)
