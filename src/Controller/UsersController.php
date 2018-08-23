@@ -13,7 +13,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 class UsersController extends FOSRestController
 {
     private $userRepository;
-    private $em;
     
     public function __construct(UserRepository $userRepository)
     {

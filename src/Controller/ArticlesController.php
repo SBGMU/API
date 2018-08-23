@@ -15,7 +15,6 @@ use Symfony\Component\HttpFoundation\Request;
  class ArticlesController extends FOSRestController
  {
      private $articleRepository;
-     private $em;
     
      public function __construct(ArticleRepository $articleRepository, EntityManagerInterface $em)
      {
@@ -48,13 +47,11 @@ use Symfony\Component\HttpFoundation\Request;
          return $this->view($article);
      }
 
-    /*
-     public function	deleteUserAction($id)
+     public function deleteArticleAction($id)
      {
-         $user = $this->userRepository->find($id);
-         $this->em->remove($user);
+         $user = $this->articleRepository->find($id);
+         $this->em->remove($article);
          $this->em->flush();
      }
-     // "delete_user"          [DELETE] /users/{id}
-     */
+     // "delete_article" [DELETE] /articles/{id}
 }
