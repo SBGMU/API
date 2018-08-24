@@ -13,8 +13,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 class UsersController extends FOSRestController
 {
     private $userRepository;
-    
-    public function __construct(UserRepository $userRepository)
+
+    public function __construct(UserRepository $userRepository, EntityManagerInterface $em)
     {
         $this->userRepository = $userRepository;
         $this->em = $em;
@@ -22,8 +22,8 @@ class UsersController extends FOSRestController
 
     public function getUsersAction()
     {
-        $users = $this->userRepository->findAll();
-        return $this->view($users);
+        $user = $this->userRepository->find($id);
+        return $this-> view($user);
     }
 
     public function getUserAction($id)

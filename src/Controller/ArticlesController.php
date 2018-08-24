@@ -15,7 +15,8 @@ use Symfony\Component\HttpFoundation\Request;
  class ArticlesController extends FOSRestController
  {
      private $articleRepository;
-    
+     private $em;
+        
      public function __construct(ArticleRepository $articleRepository, EntityManagerInterface $em)
      {
          $this->articleRepository = $articleRepository;
@@ -27,14 +28,7 @@ use Symfony\Component\HttpFoundation\Request;
          $articles = $this->articleRepository->findAll();
          return $this->view($articles);
      }
-     // "get_articles"            [GET] /articles
-
-     public function	getArticleAction($id)
-     {
-         $article = $this->articleRepository->find($id);
-         return $this->view($article);
-     }
-     // "get_article"             [GET] /articles/{id}
+     // "get_articles" [GET] /articles
 
     /**
      * @Rest\Post("/articles")
